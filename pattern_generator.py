@@ -30,9 +30,8 @@ def format_pattern(pattern):
 
 def check_pattern_answer(target, answer):
     """Return True if the player's answer matches the pattern, False if not."""
-    answer_rows = answer.strip()
-    answer_rows = [row.replace("")]
-    target_rows = [row.replace(" ", "")]
+    answer_rows = [row.replace(" ", "") for row in answer.strip().splitlines()] # removes spaces from answer  
+    target_rows = [row.replace (" ", "") for row in target] # removes spaces from target 
     return answer_rows == target_rows # check if they match 
 
 
@@ -41,4 +40,9 @@ def get_pattern_size(level):
     if level < 1: 
         raise ValueError("level must be at least 1")
     if level <= 3: 
-        return(1)
+        return(1, level + 1) # levels 1-3 are one row that gets wider 
+    rows = min((level - 1) // 3 + 1, 4) # adds a new row every 3 levels, max 4 rows 
+    cols = ((level-1) % 3) + 2 # cycles columns between 2 and 4 
+    return (rows, cols)
+    
+    
