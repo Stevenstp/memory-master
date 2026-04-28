@@ -15,7 +15,22 @@ def get_mode():
     Returns:
         str: 'numbers', 'phrases', or 'pictures'
     """
-    pass
+    print("Choose a game mode:")
+    print("1. Numbers - Remember a sequence of digits")
+    print("2. Phrases - Remember a list of words in order")
+    print("3. Pictures - Remember character pattern")
+
+    choice = input("Enter 1, 2, or 3: ")
+
+    if choice == "1":
+        return "numbers"
+    elif choice == "2":
+        return "phrases"
+    elif choice == "3":
+        return "pictures"
+    else:
+        print("Invalid choice, defaulting to numbers")
+        return "numbers"
 
 
 def get_difficulty():
