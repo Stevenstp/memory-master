@@ -40,8 +40,22 @@ def get_difficulty():
     Returns:
         str: 'easy', 'medium', or 'hard'
     """
-    pass
+    print("Choose a difficulty: ")
+    print("1. Easy (5 seconds to memorize)")
+    print("2. Medium (3 seconds to memorize)")
+    print("3. Hard (1.5 seconds to memorize)")
 
+    choice = input("Enter 1, 2 or 3: ").strip()
+
+    if choice == "1":
+        return "easy"
+    elif choice == "2":
+        return "medium"
+    elif choice == "3":
+        return "hard"
+    else: 
+        print("Invalid choice, defaulting to medium")
+        return "medium"
 
 if __name__ == "__main__":
     mode = get_mode()
