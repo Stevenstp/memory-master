@@ -25,7 +25,7 @@ def format_pattern(pattern):
     result = ""
     for row in pattern:
         result += " ".join(row) + "\n"
-        return result.strip()
+    return result.strip()
 
 
 def check_pattern_answer(target, answer):
