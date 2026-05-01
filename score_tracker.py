@@ -47,5 +47,5 @@ class ScoreTracker:
         if score > self.get_high_score(): # save only if its a new high score 
             file = open(self.filepath, "w") # open file to write to it 
             file.write(str(score)) # write score as a string into the file 
-            file.close
+            file.close()
             print("New high score saved!")
