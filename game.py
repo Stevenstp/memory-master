@@ -91,18 +91,25 @@ class MemoryMasterGame:
     def get_player_answer(self):
         """Ask the player for their answer and return what they typed."""
         if self.mode == "numbers":
-            return input("Type the number you saw: ")
+            answer = input("Type the number you saw: ")
+            if answer == "":
+                return answer
         elif self.mode == "phrases":
-            return input("Type the words in order (separated by spaces): ")
-        else:
-            print("Type the pattern row by row. Press Enter on a blank line when done.")
+            answer = input("Type the words in order (separated by spaces): ")
+            if answer == "":
+                return ""
+            return answer
+        else: 
+            print("Type the pattern row by row. Press enter on a blank line when done.")
             lines = []
             while True:
                 line = input()
-                if line == "": # blank line = player is done 
+                if line == "":
                     break
-                lines.append(line)
-            return "\n".join(lines) # joins all the rows into one string 
+            lines.append(line)
+            if len(lines) == 0: # if they submitted nothing 
+                return ""
+            return "\n".join(lines)
 
     def run(self):
         """Run the game loop until the player gets one wrong."""
