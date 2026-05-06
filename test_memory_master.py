@@ -3,7 +3,14 @@ test_memory_master.py - Unit tests for MemoryMaster.
 """
 
 import unittest
+import os
+import tempfile 
+
 from number_generator import generate_number
+from word_generator import generate_word_list, check_word_list_answer
+from pattern_generator import generate_pattern, check_pattern_answer, get_pattern_size
+from score_tracker import ScoreTracker
+from game import MemoryMasterGame
 
 
 class TestNumberGenerator(unittest.TestCase):
@@ -26,10 +33,14 @@ class TestNumberGenerator(unittest.TestCase):
 # rest of tests still need to be written
 
 class TestWordGenerator(unittest.TestCase):
+
     def test_correct_count(self):
-        pass
+        # should return exactly the number of words we ask for 
+        self.assertEqual(len(generate_word_list(3)), 3)
+
     def test_correct_answer(self):
-        pass
+        # typing the right words in order should return True 
+        self.assertTrue(check_word_list_answer(["apple", "bridge"], "apple bridge"))
 
 
 class TestPatternGenerator(unittest.TestCase):
