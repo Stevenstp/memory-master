@@ -44,13 +44,20 @@ class TestWordGenerator(unittest.TestCase):
 
 
 class TestPatternGenerator(unittest.TestCase):
+
     def test_correct_rows_and_cols(self):
-        pass
+        # pattern should have the right number of rows and columns 
+        p = generate_pattern(2, 3)
+        self.assertEqual(len(p), 2)
+        self.assertTrue(all(len(row) == 3 for row in p))
+                            
     def test_correct_pattern_answer(self):
-        pass
+        # typing the pattern exactly right should return True 
+        self.assertTrue(check_pattern_answer(["#@", "*+"], "#@\n*+"))
 
 
 class TestScoreTracker(unittest.TestCase):
+    
     def test_starts_at_zero(self):
         pass
     def test_saves_high_score(self):
