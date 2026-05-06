@@ -57,11 +57,15 @@ class TestPatternGenerator(unittest.TestCase):
 
 
 class TestScoreTracker(unittest.TestCase):
-    
+
     def test_starts_at_zero(self):
-        pass
+        # return 0 when there's no file yet 
+        self.assertEqual(self.tracker.get_high_score(), 0)
+        
     def test_saves_high_score(self):
-        pass
+        # saving score should store it correctly 
+        self.tracker.save_score(100)
+        self.assertEqual(self.tracker.get_high_score(), 100)
 
 
 class TestGame(unittest.TestCase):
