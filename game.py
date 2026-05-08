@@ -92,8 +92,7 @@ class MemoryMasterGame:
         """Ask the player for their answer and return what they typed."""
         if self.mode == "numbers":
             answer = input("Type the number you saw: ")
-            if answer == "":
-                return answer
+            return answer
         elif self.mode == "phrases":
             answer = input("Type the words in order (separated by spaces): ")
             if answer == "":
