@@ -6,7 +6,7 @@ A command-line memory game where you memorize and recall numbers, words, or patt
 
 Make sure Python 3 is installed. No extra packages needed. Run this from inside the memory-master folder:
 
-python main.py
+python main.py or python3 main.py
 
 ## How to Play
 
