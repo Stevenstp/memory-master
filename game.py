@@ -105,7 +105,7 @@ class MemoryMasterGame:
                 line = input()
                 if line == "":
                     break
-            lines.append(line)
+                lines.append(line)
             if len(lines) == 0: # if they submitted nothing 
                 return ""
             return "\n".join(lines)

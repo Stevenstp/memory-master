@@ -69,10 +69,16 @@ class TestScoreTracker(unittest.TestCase):
 
 
 class TestGame(unittest.TestCase):
+
     def test_starts_at_level_1(self):
-        pass
+        g = MemoryMasterGame()
+        self.assertEqual(g.level, 1)
+        
     def test_advance_level(self):
-        pass
+        g = MemoryMasterGame()
+        g.advance_level()
+        self.assertEqual(g.level, 2)
+        self.assertGreater(g.score, 0)
 
 
 if __name__ == "__main__":
